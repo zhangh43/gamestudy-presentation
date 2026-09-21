@@ -1,7 +1,9 @@
-# Include the server configuration and lesson content in the build context.
+# Include the server configuration, lesson content, and shared assets in the build context.
 *
 !nginx.conf
 !lesson*/
 !lesson*/**
+!shared/
+!shared/**
 **/.DS_Store
 **/README.md
