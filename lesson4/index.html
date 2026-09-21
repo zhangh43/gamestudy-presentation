@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="第4课：语文古诗词。体验古诗词填空、诗词接龙，用 AI 制作学科游戏并展示答辩。">
+  <title>AI在学科的趣味应用｜第四课 · 语文古诗词</title>
+  <link rel="stylesheet" href="../shared/lesson.css">
+  <script src="../shared/deck.js" defer></script>
+  <script src="games.js" defer></script>
+</head>
+<body>
+<noscript><div class="noscript">请启用 JavaScript，以使用翻页和小游戏演示。</div></noscript>
+<main class="deck" id="deck" aria-label="第四课：语文古诗词课堂演示">
+  <section class="slide hero active" aria-labelledby="title-1" tabindex="-1">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span>第 4 课 · 语文 · 古诗词</div>
+        <h1 id="title-1">AI在学科的<br><span class="accent">趣味应用</span></h1>
+        <p class="sub">让读过的诗词，成为游戏里的关卡。<br>今天，做一个帮助同学温习诗词的作品。</p>
+        <div class="chips"><span class="chip">🕹️ 示例 6 分钟</span><span class="chip">🛠️ 制作 24 分钟</span><span class="chip">💬 答辩 10 分钟</span></div>
+      </div>
+      <div class="orbit" aria-hidden="true"><b>AI</b><i>诗</i><i>月</i><i>🎮</i></div>
+    </div>
+  </section>
+
+  <section class="slide" aria-labelledby="title-2" tabindex="-1" hidden>
+    <div class="eyebrow"><span class="dot"></span>示例 01 · 古诗词填空</div>
+    <h2 id="title-2">补上一个字，<span class="accent">读懂一句诗</span></h2>
+    <div class="game-layout">
+      <div class="game-info">
+        <h3>玩法：选字，补全诗句</h3>
+        <ol class="rules"><li>先读整句，再选择缺少的字。</li><li>答错看提示，重新想一想。</li><li>答对读原句，说说诗中的画面。</li></ol>
+        <div class="callout warm"><strong>记忆线索：</strong><br>联系诗句的意思，记住关键字。</div>
+        <p class="game-takeaway">题目要有准确的原文与出处；不能只凭“读起来很像”判对。</p>
+      </div>
+      <div class="game-panel" aria-label="古诗词填空演示">
+        <div class="game-topline"><span class="tag">选择填空</span><span id="fill-progress">第 1 / 3 题</span></div>
+        <p class="game-note" id="fill-source"></p>
+        <div class="poem-line" id="fill-poem"></div>
+        <div class="answers" id="fill-answers" aria-label="填空选项"></div>
+        <p class="feedback" id="fill-feedback" role="status"></p>
+        <div class="game-actions"><button class="primary" id="fill-next" type="button" hidden>下一题 →</button><button class="ghost" id="fill-reset" type="button">重新开始</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" aria-labelledby="title-3" tabindex="-1" hidden>
+    <div class="eyebrow"><span class="dot"></span>示例 02 · 诗词接龙</div>
+    <h2 id="title-3">接出下一句，<span class="accent">拼成一首诗</span></h2>
+    <div class="game-layout">
+      <div class="game-info">
+        <h3>今天的规则：同一首诗接下句</h3>
+        <ol class="rules"><li>从第一句开始，选出紧接着的一句。</li><li>答对接入诗链，答错可重试。</li><li>接完四句，全班一起读。</li></ol>
+        <div class="callout warm"><strong>记忆线索：</strong><br>按顺序，把一首诗的画面连起来。</div>
+        <p class="game-takeaway">本例按原诗顺序接句。自己创作时，也可以设计关键词接龙，但要先说清规则。</p>
+      </div>
+      <div class="game-panel chain-panel" aria-label="诗词接龙演示">
+        <div class="game-topline"><span class="tag">接下句</span><span id="chain-progress">已接 1 / 4 句</span></div>
+        <p class="game-note">《春晓》· 唐 · 孟浩然</p>
+        <div class="poem-trail" id="chain-trail" aria-label="已接出的诗句"></div>
+        <p class="game-note" id="chain-instruction">下一句是哪一句？</p>
+        <div class="answers lines" id="chain-answers" aria-label="接龙选项"></div>
+        <p class="feedback" id="chain-feedback" role="status"></p>
+        <div class="game-actions"><button class="primary" id="chain-next" type="button" hidden>继续接龙 →</button><button class="ghost" id="chain-reset" type="button">重新接龙</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" aria-labelledby="title-4" tabindex="-1" hidden>
+    <div class="eyebrow"><span class="dot"></span>项目任务 · 玩法由你决定</div>
+    <h2 id="title-4">做一个<span class="accent">古诗词游戏</span></h2>
+    <div class="design-banner">先选 <strong>2–3 首学过的诗词</strong>，<br>让玩家在挑战中记住诗句、理解诗意。</div>
+    <div class="grid-3">
+      <article class="card"><span class="step-num">1</span><h3>选内容</h3><p>以课本为依据，<br>核对原文、题目、作者，<br>准备正确答案与提示。</p></article>
+      <article class="card"><span class="step-num">2</span><h3>定玩法</h3><p>填空、接龙，<br>或诗句排序。<br>先说清怎样才算答对。</p></article>
+      <article class="card"><span class="step-num">3</span><h3>做出完整一轮</h3><p>至少 3 次作答，<br>答错有提示、答对有原句，<br>结束能回顾、能重玩。</p></article>
+    </div>
+    <div class="prompt"><strong>补完整，再告诉 AI：</strong>请只用这些已核对的诗词______，制作______游戏。规则是______，答错提示______，答对显示原句和出处。先做 3 关，支持重玩。</div>
+  </section>
+
+  <section class="slide" aria-labelledby="title-5" tabindex="-1" hidden>
+    <div class="eyebrow"><span class="dot"></span>自主制作 · 先能玩，再改好</div>
+    <div class="studio-top"><div><h2 id="title-5">现在，把诗词<span class="accent">变成关卡</span></h2><p class="sub">分工：定规则 · 核原文 · 操作 AI · 测试 · 讲解</p></div><div class="timer" id="work-timer" aria-label="项目制作计时器"><output id="timer-output" role="timer" aria-label="制作剩余时间">24:00</output><button class="primary" id="timer-start" type="button">开始</button><button class="ghost" id="timer-reset" type="button">重置</button></div></div>
+    <div class="grid-3">
+      <article class="card"><span class="step-num">1</span><h3>3 分钟 · 定规则</h3><p>写出原文、正确答案和过关条件，画出第一关。</p></article>
+      <article class="card"><span class="step-num">2</span><h3>16 分钟 · 做作品</h3><p>让 AI 帮忙实现。<br>每次只改一个问题，改完马上试。</p></article>
+      <article class="card"><span class="step-num">3</span><h3>5 分钟 · 互测修改</h3><p>请另一组试玩。<br>记下一个问题，修好后再试一次。</p></article>
+    </div>
+    <div class="callout"><strong>交付前必测：</strong>原文和作者对吗？答错有提示吗？接错顺序会过关吗？重玩能清零吗？</div>
+    <p class="game-takeaway">准备答辩：保存作品文件 / 链接，记下“发现的问题 → 做出的修改”。输入型游戏还要试试空答案与标点。</p>
+  </section>
+
+  <section class="slide finish hero" aria-labelledby="title-6" tabindex="-1" hidden>
+    <div class="eyebrow"><span class="dot"></span>展示答辩 · 每组 2 分钟</div>
+    <h2 id="title-6">玩过之后，<span style="color:var(--yellow)">留下一句诗</span></h2>
+    <p class="sub">1 分钟展示 · 45 秒答辩 · 15 秒换组</p>
+    <div class="grid-3">
+      <article class="card"><span class="step-num">1</span><h3>你们想教什么？</h3><p>选了哪些诗词？<br>希望玩家记住原文，还是理解诗意？</p></article>
+      <article class="card"><span class="step-num">2</span><h3>现场玩一轮</h3><p>演示一次答对、一次答错。<br>再说说你们改好的一个问题。</p></article>
+      <article class="card"><span class="step-num">3</span><h3>回答一个问题</h3><p>原文和答案是怎样核对的？<br>你们的提示怎样帮助玩家记住诗句？</p></article>
+    </div>
+    <p class="closing">听众：说一个亮点，提一个问题，再背一句刚出现的诗。</p>
+  </section>
+</main>
+<div class="toolbar"><a href="teacher.html" aria-label="查看教师参考" title="教师参考">✎</a><button id="help-button" type="button" aria-label="查看演示快捷键" aria-expanded="false" aria-controls="help-panel">?</button></div>
+<div class="help-panel" id="help-panel" hidden><strong>演示快捷键</strong><p>← / →、PageUp / PageDown：翻页<br>空格：下一页<br>Home / End：封面 / 最后一页<br>F：切换全屏<br>Esc：关闭帮助 / 退出全屏</p><p>手机可左右轻扫翻页；小游戏内点击操作。制作计时由老师手动开始。</p><p><a href="../lesson3/index.html">← 第三课</a> · <a href="teacher.html">教师参考</a></p></div>
+<span class="nav-hint" id="nav-hint">← → 翻页 · F 全屏</span>
+<nav class="nav" aria-label="课程翻页"><button id="prev" type="button" aria-label="上一页" disabled>←</button><div class="progress" aria-hidden="true"><i id="progress-bar"></i></div><span class="counter" id="counter" aria-live="polite" aria-atomic="true">1 / 6</span><button id="next" type="button" aria-label="下一页">→</button><button class="fullscreen" id="fullscreen" type="button" aria-label="进入全屏" title="全屏（F）">⛶</button></nav>
+<div class="sr-only" id="presentation-status" role="status"></div>
+</body>
+</html>

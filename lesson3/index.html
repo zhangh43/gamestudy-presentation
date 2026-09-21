@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="第3课：英语记单词。体验近义词连连看、单词打地鼠，用 AI 制作学科游戏并展示答辩。">
+  <title>AI在学科的趣味应用｜第三课 · 英语记单词</title>
+  <link rel="stylesheet" href="../shared/lesson.css">
+  <script src="../shared/deck.js" defer></script>
+  <script src="games.js" defer></script>
+</head>
+<body>
+<noscript><div class="noscript">请启用 JavaScript，以使用翻页和小游戏演示。</div></noscript>
+<main class="deck" id="deck" aria-label="第三课：英语记单词课堂演示">
+  <section class="slide hero active" aria-labelledby="title-1" tabindex="-1">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow"><span class="dot"></span>第 3 课 · 英语 · 记单词</div>
+        <h1 id="title-1">AI在学科的<br><span class="accent">趣味应用</span></h1>
+        <p class="sub">把要记的单词，变成想玩的游戏。<br>今天，做一个帮助同学记单词的作品。</p>
+        <div class="chips"><span class="chip">🕹️ 示例 6 分钟</span><span class="chip">🛠️ 制作 24 分钟</span><span class="chip">💬 答辩 10 分钟</span></div>
+      </div>
+      <div class="orbit" aria-hidden="true"><b>AI</b><i>Aa</i><i>↔</i><i>🎮</i></div>
+    </div>
+  </section>
+
+  <section class="slide" aria-labelledby="title-2" tabindex="-1" hidden>
+    <div class="eyebrow"><span class="dot"></span>示例 01 · 近义词连连看</div>
+    <h2 id="title-2">给单词找一个<span class="accent">意思相近的朋友</span></h2>
+    <div class="game-layout">
+      <div class="game-info">
+        <h3>玩法：左右各点一个</h3>
+        <ol class="rules"><li>读出单词，想想它的意思。</li><li>配对成功，查看词义与例句。</li><li>配错不消失，可以重新选择。</li></ol>
+        <div class="callout warm"><strong>记忆线索：</strong><br>把意思相近的词放在一起记。</div>
+        <p class="game-takeaway">近义词也要看语境：意思接近，不代表所有句子里都能互换。</p>
+      </div>
+      <div class="game-panel" aria-label="近义词连连看演示">
+        <div class="game-topline"><span class="tag">点击配对</span><span id="match-progress">已配对 0 / 4</span></div>
+        <div class="match-grid"><div class="word-column" id="match-left" aria-label="左侧单词"></div><div class="word-column" id="match-right" aria-label="右侧单词"></div></div>
+        <p class="feedback" id="match-feedback" role="status">试试 big 的近义词。先点左侧，再点右侧，也可以反过来。</p>
+        <div class="game-actions"><button class="ghost" id="match-reset" type="button">重新配对</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" aria-labelledby="title-3" tabindex="-1" hidden>
+    <div class="eyebrow"><span class="dot"></span>示例 02 · 单词打地鼠</div>
+    <h2 id="title-3">看中文，<span class="accent">打中正确的英文</span></h2>
+    <div class="game-layout">
+      <div class="game-info">
+        <h3>玩法：先想词义，再出手</h3>
+        <ol class="rules"><li>每轮 3 只地鼠，只有 1 个词符合提示。</li><li>答对加 1 分；答错看词义，再试一次。</li><li>挑战 30 秒，结束后复习错词。</li></ol>
+        <div class="callout warm"><strong>想一想：</strong><br>除了反应快，怎样帮助玩家真正记住单词？</div>
+        <p class="game-takeaway">每题答对后手动进入下一题；可以暂停，先读懂反馈。</p>
+      </div>
+      <div class="game-panel" aria-label="单词打地鼠演示">
+        <div class="game-topline"><span class="tag" id="mole-score">得分 0</span><span id="mole-time" role="timer" aria-label="剩余时间">30 秒</span></div>
+        <p class="game-question" id="mole-question">准备好了吗？</p>
+        <p class="game-note">点击地鼠，或按数字键 1 / 2 / 3。</p>
+        <div class="mole-grid" id="mole-grid"></div>
+        <p class="feedback" id="mole-feedback" role="status">点击“开始挑战”，让单词地鼠出现。</p>
+        <div class="game-actions"><button class="primary" id="mole-start" type="button">开始挑战</button><button class="ghost" id="mole-pause" type="button" hidden>暂停</button><button class="primary" id="mole-next" type="button" hidden>下一题 →</button><button class="ghost" id="mole-reset" type="button">重置</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" aria-labelledby="title-4" tabindex="-1" hidden>
+    <div class="eyebrow"><span class="dot"></span>项目任务 · 玩法由你决定</div>
+    <h2 id="title-4">做一个<span class="accent">英语记单词游戏</span></h2>
+    <div class="design-banner">先选 <strong>6–10 个学过的单词</strong>，<br>让玩家每次操作都要想一想词义或拼写。</div>
+    <div class="grid-3">
+      <article class="card"><span class="step-num">1</span><h3>选内容</h3><p>用课本中的单词。<br>先核对拼写、词义；做近义词配对要核对语境。</p></article>
+      <article class="card"><span class="step-num">2</span><h3>定玩法</h3><p>连连看、打地鼠，<br>或拼写闯关。<br>先完成一种核心玩法。</p></article>
+      <article class="card"><span class="step-num">3</span><h3>做出完整一轮</h3><p>有题目、有判断、<br>答错有解释，<br>结束能复习、能重玩。</p></article>
+    </div>
+    <div class="prompt"><strong>补完整，再告诉 AI：</strong>请用这些已核对的单词______，制作______游戏。玩家要______，答错时显示______，结束后______。先做能玩的一版。</div>
+  </section>
+
+  <section class="slide" aria-labelledby="title-5" tabindex="-1" hidden>
+    <div class="eyebrow"><span class="dot"></span>自主制作 · 先能玩，再改好</div>
+    <div class="studio-top"><div><h2 id="title-5">现在，把想法<span class="accent">做出来</span></h2><p class="sub">分工：定规则 · 核词表 · 操作 AI · 测试 · 讲解</p></div><div class="timer" id="work-timer" aria-label="项目制作计时器"><output id="timer-output" role="timer" aria-label="制作剩余时间">24:00</output><button class="primary" id="timer-start" type="button">开始</button><button class="ghost" id="timer-reset" type="button">重置</button></div></div>
+    <div class="grid-3">
+      <article class="card"><span class="step-num">1</span><h3>3 分钟 · 定规则</h3><p>写出词表、正确答案和过关条件，画出第一关。</p></article>
+      <article class="card"><span class="step-num">2</span><h3>16 分钟 · 做作品</h3><p>让 AI 帮忙实现。<br>每次只改一个问题，改完马上试。</p></article>
+      <article class="card"><span class="step-num">3</span><h3>5 分钟 · 互测修改</h3><p>请另一组试玩。<br>记下一个问题，修好后再试一次。</p></article>
+    </div>
+    <div class="callout"><strong>交付前必测：</strong>答对能过关吗？答错能学到什么？重复点击会多加分吗？重玩能清零吗？</div>
+    <p class="game-takeaway">准备答辩：保存作品文件 / 链接，记下“发现的问题 → 做出的修改”。</p>
+  </section>
+
+  <section class="slide finish hero" aria-labelledby="title-6" tabindex="-1" hidden>
+    <div class="eyebrow"><span class="dot"></span>展示答辩 · 每组 2 分钟</div>
+    <h2 id="title-6">让大家玩，也让大家<span style="color:var(--yellow)">记住</span></h2>
+    <p class="sub">1 分钟展示 · 45 秒答辩 · 15 秒换组</p>
+    <div class="grid-3">
+      <article class="card"><span class="step-num">1</span><h3>你们想教什么？</h3><p>选了哪些单词？<br>希望玩家记住词义，还是练习拼写？</p></article>
+      <article class="card"><span class="step-num">2</span><h3>现场玩一轮</h3><p>演示一次答对、一次答错。<br>再说说你们改好的一个问题。</p></article>
+      <article class="card"><span class="step-num">3</span><h3>回答一个问题</h3><p>玩家乱点能过关吗？<br>你们怎样判断他记住了单词？</p></article>
+    </div>
+    <p class="closing">听众：说一个亮点，提一个问题，再回忆一个刚学到的词。</p>
+  </section>
+</main>
+<div class="toolbar"><a href="teacher.html" aria-label="查看教师参考" title="教师参考">✎</a><button id="help-button" type="button" aria-label="查看演示快捷键" aria-expanded="false" aria-controls="help-panel">?</button></div>
+<div class="help-panel" id="help-panel" hidden><strong>演示快捷键</strong><p>← / →、PageUp / PageDown：翻页<br>空格：下一页<br>Home / End：封面 / 最后一页<br>F：切换全屏<br>Esc：关闭帮助 / 退出全屏</p><p>手机可左右轻扫翻页。制作计时由老师手动开始；打地鼠离开本页会暂停。</p><p><a href="../lesson2/index.html">← 第二课</a> · <a href="../lesson4/index.html">第四课 →</a></p></div>
+<span class="nav-hint" id="nav-hint">← → 翻页 · F 全屏</span>
+<nav class="nav" aria-label="课程翻页"><button id="prev" type="button" aria-label="上一页" disabled>←</button><div class="progress" aria-hidden="true"><i id="progress-bar"></i></div><span class="counter" id="counter" aria-live="polite" aria-atomic="true">1 / 6</span><button id="next" type="button" aria-label="下一页">→</button><button class="fullscreen" id="fullscreen" type="button" aria-label="进入全屏" title="全屏（F）">⛶</button></nav>
+<div class="sr-only" id="presentation-status" role="status"></div>
+</body>
+</html>
